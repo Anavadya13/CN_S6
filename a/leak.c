@@ -56,7 +56,23 @@ Time is incremented for each leak step.
 Step 7: Final Output and End of Program
 Program Completion:
 The function ends, and the program terminates successfully.
-
+........................
+  1. Initialize variables: bsize, n, out, bucket as integers.
+ 2. Read and store the bucket size (bsize) from the user.
+ 3. Read and store the number of inputs (n) from the user.
+ 4. Read and store the packet outgoing rate (out) from the user.
+ 5. Read and store the incoming packet size (in) from the user.
+ 6. If in is less than or equal to the available space in the bucket (bsize - bucket), then:
+ 1. Add the incoming packet size (in) to the bucket (bucket += in).
+ 7. If in is greater than the available space in the bucket (bsize - bucket), then:
+ 1. Calculate the number of dropped packets (in - (bsize - bucket)).
+ 2. 7.2-Set the bucket size (bucket) to its maximum capacity (bsize).
+ 3. Print the number of dropped packets.
+ 8. Print the bucket status (bucket packets out of bsize).
+ 9. Subtract the packet outgoing rate (out) from the bucket size (bucket).
+ 10. Print the bucket status after outgoing packets (bucket packets out of bsize).
+ 11. Decrement the value of n by 1.
+ 12. Repeat steps 5 to 11 until n becomes zero
 
 
 
